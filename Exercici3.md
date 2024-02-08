@@ -9,6 +9,14 @@ Comprova l'estat del repositori.
 Desfés els canvis realitzats al fitxer índex.txt per tornar a la versió anterior del fitxer.
 Torna a comprovar l'estat del repositori.
 
+>sed -i ‘$d’ index.txt
+>
+>git status
+>
+>git checkout – index.txt
+>
+>git status
+
 Exercici 2
 -
 
@@ -19,6 +27,20 @@ Treu els canvis de la zona d'intercanvi temporal, però mantin-los al directori 
 Comprova de nou l'estat del repositori.
 Desfés els canvis realitzats al fitxer índex.txt per tornar a la versió anterior del fitxer.
 Torna a comprovar l'estat del repositori.
+
+>sed -i ‘$d’ index.txt
+>
+>git add index.txt
+>
+>git status
+>
+>git reset HEAD index.txt
+>
+>git status
+>
+>git checkout – index.txt
+>
+>git status
 
 Exercici 3
 -
@@ -33,6 +55,24 @@ Comprova de nou l'estat del repositori.
 Desfés els canvis realitzats per tornar a la versió del repositori.
 Torna a comprovar l'estat del repositori.
 
+>sed -i ‘$d’ index.txt
+>
+>rm capitols/capitol3.txt
+>
+>touch capitols/capitol4.txt
+>
+>git add index.txt capitols/capitol4.txt
+>
+>git status
+>
+>git reset HEAD index.txt capitols/capitol4.txt
+>
+>git status
+>
+>git checkout – index.txt capitols/capitol4.txt
+>
+>git status
+
 Exercici 4
 -
 
@@ -45,3 +85,29 @@ Comprova l'historial i l'estat del repositori.
 Torna a fer el commit amb el mateix missatge d'abans.
 Desfés l'últim commit i els canvis anteriors al directori de treball, tornant a la versió anterior del repositori.
 Comprova de nou l'historial i l'estat del repositori.
+
+>sed -i ‘$d’ index.txt
+>
+>rm capitols/capitol3.txt
+>
+>git add index.txt capitols/capitol3.txt
+>
+>git commit -m “Borrat accidental”
+>
+>git log
+>
+>git reset HEAD~1
+>
+>git log
+>
+>git status
+>
+>git add index.txt capitols/capitol3.txt
+>
+>git commit -m “Borrat accidental”
+>
+>git reset HEAD~1 –hard
+>
+>git log
+>
+>git status
